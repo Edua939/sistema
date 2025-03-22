@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Desarrollo de Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-y: scroll;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.15), 0 10px 12px -8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.25rem;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .card-title:hover {
+            color: #e74c3c;
+        }
+        
+        .card-content {
+            font-size: 1.1rem;
+            color: #34495e;
+            line-height: 1.7;
+        }
+        
+        .model-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .model-title:hover {
+            color: #2c3e50;
+        }
+        
+        .model-description {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background-color: #f0f4c3;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            color: #1a5235;
+        }
+        
+        .diagram-image {
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 6px 15px -5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .interactive-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            margin-top: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            border: none;
+            text-align: center;
+        }
+        
+        .interactive-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-0.25rem);
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .index-list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .index-list li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .index-list li a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .index-list li a:hover {
+            color: #217dbb;
+        }
+        /* Estilos para la barra de desplazamiento */
+        
+        body::-webkit-scrollbar {
+            width: 0.5rem;
+        }
+        
+        body::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0.5rem;
+        }
+        
+        body::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        body {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-purple-100 to-pink-100 min-h-screen flex flex-col items-center justify-start py-10">
+    <div class="container mx-auto px-4 relative">
+        <div class="card">
+            <h1 class="card-title" id="main-title">Modelos de Desarrollo de Software</h1>
+            <ul class="index-list">
+                <li><a href="#simulation-title">Concepto de Simulación</a></li>
+                <li><a href="#modulation-title">Modelos de Modulación</a></li>
+                <li><a href="#cascada-title">Modelo en Cascada</a></li>
+                <li><a href="#iterativo-title">Modelo Iterativo</a></li>
+                <li><a href="#espiral-title">Modelo en Espiral</a></li>
+                <li><a href="#v-title">Modelo en V</a></li>
+                <li><a href="#continuo-title">Modelo Continuo</a></li>
+            </ul>
+            <p class="card-content">
+                En el estudio de sistemas, la simulación juega un papel crucial para entender su comportamiento y características. Aquí exploraremos el concepto de simulación, los modelos de modulación y algunos tipos comunes.
+            </p>
+
+            <h2 class="model-title" id="simulation-title">Concepto de Simulación</h2>
+            <p class="card-description">
+                La simulación es el proceso de crear un modelo de un sistema real y luego experimentar con ese modelo para comprender el comportamiento del sistema real. Esto permite a los analistas probar diferentes escenarios, evaluar el impacto de los cambios y obtener
+                información valiosa sin necesidad de manipular el sistema real directamente.
+            </p>
+
+            <h2 class="model-title" id="modulation-title">Modelos de Modulación</h2>
+            <p class="card-description">
+                La modulación es un proceso en el que se varían las características de una onda portadora de acuerdo con la información contenida en una señal moduladora. Esto se hace para transmitir la información de manera eficiente a través de un canal de comunicación.
+                Existen varios tipos de modulación, incluyendo:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="card">
+                    <h3 class="model-title" id="cascada-title">Modelo en Cascada</h3>
+                    <img src="photo_2025-03-21_22-19-19.jpg" alt="Diagrama del Modelo en Cascada" class="diagram-image">
+                    <p class="model-description">
+                        Aunque comúnmente se asocia con el desarrollo de software, el modelo en cascada también puede aplicarse a la modulación en ciertos contextos. En un enfoque en cascada, las etapas del proceso de modulación se realizan de forma secuencial.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="model-title" id="iterativo-title">Modelo Iterativo</h3>
+                    <img src="photo_2025-03-21_22-19-53.jpg" alt="Diagrama del Modelo Iterativo" class="diagram-image">
+                    <p class="model-description">
+                        En un modelo iterativo, el proceso de modulación se refina a través de varias iteraciones, permitiendo ajustes y mejoras en cada etapa.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="model-title" id="espiral-title">Modelo en Espiral</h3>
+                    <img src="photo_2025-03-21_22-20-09.jpg" alt="Diagrama del Modelo en Espiral" class="diagram-image">
+                    <p class="model-description">
+                        El modelo en espiral, con su enfoque en el análisis de riesgos, puede aplicarse a sistemas de modulación complejos donde la gestión de riesgos es crucial.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="model-title" id="v-title">Modelo en V</h3>
+                    <img src="photo_2025-03-21_22-20-19.jpg" alt="Diagrama del Modelo en V" class="diagram-image">
+                    <p class="model-description">
+                        El modelo en V enfatiza la verificación y validación en cada etapa del proceso de modulación, asegurando la calidad de la señal modulada.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="model-title" id="continuo-title">Modelo Continuo</h3>
+                    <img src="photo_2025-03-21_22-19-43.jpg" alt="Diagrama del Modelo de Desarrollo Continuo" class="diagram-image">
+                    <p class="model-description">
+                        El modelo continuo busca optimizar el proceso de modulación para una transmisión eficiente y sin interrupciones.
+                    </p>
+                </div>
+            </div>
+            <button class="interactive-button" id="learnMoreButton">
+                ¡Explora el Mundo de la Simulación y Modulación!
+            </button>
+        </div>
+        <footer class="footer">
+            &copy; 2025 Todos los derechos reservados.
+        </footer>
+    </div>
+
+    <script>
+        const mainTitle = document.getElementById('main-title');
+        const simulationTitle = document.getElementById('simulation-title');
+        const modulationTitle = document.getElementById('modulation-title');
+        const cascadaTitle = document.getElementById('cascada-title');
+        const iterativoTitle = document.getElementById('iterativo-title');
+        const espiralTitle = document.getElementById('espiral-title');
+        const vTitle = document.getElementById('v-title');
+        const continuoTitle = document.getElementById('continuo-title');
+        const learnMoreButton = document.getElementById('learnMoreButton');
+
+
+        mainTitle.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+
+        simulationTitle.addEventListener('click', function() {
+            document.getElementById('simulation-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        modulationTitle.addEventListener('click', function() {
+            document.getElementById('modulation-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        cascadaTitle.addEventListener('click', function() {
+            document.getElementById('cascada-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        iterativoTitle.addEventListener('click', function() {
+            document.getElementById('iterativo-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        espiralTitle.addEventListener('click', function() {
+            document.getElementById('espiral-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        vTitle.addEventListener('click', function() {
+            document.getElementById('v-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        continuoTitle.addEventListener('click', function() {
+            document.getElementById('continuo-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        learnMoreButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
